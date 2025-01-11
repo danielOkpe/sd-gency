@@ -3,29 +3,34 @@
         <ul>
             <!-- Partie gauche -->
             <span class="left-links">
-                <li><NuxtLink to="/">Accueil</NuxtLink></li>
-                <li><NuxtLink to="/presentation">Nos experts</NuxtLink></li>
-                <li><NuxtLink to="/agency">L'agence</NuxtLink></li>
+                <li><NuxtLink to="/">Home</NuxtLink></li>
+                <li><NuxtLink to="/presentation">Qui sommes nous</NuxtLink></li>
+                <li><NuxtLink to="/services">Nos services</NuxtLink></li>
+                <li><NuxtLink to="/agency">Nos Packs</NuxtLink></li>
+
             </span>
 
-            <!-- Partie centrée -->
-            <li class="center-item">
-                <NuxtLink to="/" class="center">SD Agency</NuxtLink>
-            </li>
-
             <!-- Partie droite -->
-            <li class="right-links">
-                <NuxtLink to="/contact">Contactez-nous</NuxtLink>
-            </li>
+            <span class="right-links">
+                <li>
+                    <NuxtLink to="/">Consultation personnalisée</NuxtLink>
+                </li>
+                <li >
+                <NuxtLink to="/contact">Contact</NuxtLink>
+                </li>
+            </span>
+            
         </ul>
     </nav>
 </template>
 
 <style scoped>
 nav {
-    width: 60%;
+    width: 100%;
     height: 60px;
     margin: auto;
+    color: white;
+    
 }
 
 ul {
@@ -35,20 +40,33 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 97%;
+    margin: auto;
+}
+
+ul li a{
+    color: white;
+    transition: all 0.1s ease-in-out;
+}
+
+ul li a:hover{
+    color: #9B6BFF;
 }
 
 .left-links {
     display: flex;
-    gap: 10px;
+    height: 60px;
+    gap: 12px;
+    align-items: center;
 }
 
-.center-item {
-    flex: 1; /* Permet au centre de s'adapter pour un alignement parfait */
-    text-align: center; /* Centre le texte "SD Agency" horizontalement */
-}
+
 
 .right-links {
-    margin-left: auto; /* Décale "Contactez-nous" complètement à droite */
+    display: flex;
+    gap: 25px;
+    height: 60px;
+    align-items: center;
 }
 
 .center {
