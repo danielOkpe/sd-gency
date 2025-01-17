@@ -4,7 +4,6 @@
             <!-- Partie gauche -->
             <span class="left-links">
                 <li><NuxtLink to="/">Home</NuxtLink></li>
-                <li><NuxtLink to="/presentation">Qui sommes nous</NuxtLink></li>
                 <li><NuxtLink to="/services">Nos services</NuxtLink></li>
                 <li><NuxtLink to="/agency">Nos Packs</NuxtLink></li>
 
