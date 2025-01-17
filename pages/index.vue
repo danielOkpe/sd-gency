@@ -1,7 +1,7 @@
 <template>
     <section class="header">
         <div class="about">
-            <Titre id="about-title"  content="Qui Somme Nous ?" />
+            <Titre id="about-title"  content="SD Agency" />
         <Paragraph content="Nous sommes SD angency , une agence specialisee 
  dans le marketing digital et de devellopement web ainsi que plusieurs autres services . Nous vous proposons les services les plus adaptés à vous et a vos ventes en s’appuyant sur " />
         <Titre class="network-title" content="Nos réseaux sociaux" />
@@ -36,19 +36,16 @@
 
         </div>
         <div class="white">
-            <Titre class="icon-title" content="Un bail"/>
-            <Paragraph class="p" content="un paragraphe en bienguinnnnn le temps qu'elle me fasse un vrai paragraĥe sa mère haha"/>
-                <Button class="btn" content="un truc toujours sah"></Button>
+            <Titre class="icon-title" content="Samira"/>
+            <Paragraph class="p" content="Samira , notre copywriter et spécialiste en psychologie et en sociologie qui. Grâce à son empathie et à ses compétences, elle cerne vos besoins et comprend les comportements des consommateurs pour créer des messages authentiques et percutants."/>
         </div>
         <div class="white">
-            <Titre class="icon-title" content="Un bail"/>
-            <Paragraph class="p" content="un paragraphe en bienguinnnnn le temps qu'elle me fasse un vrai paragraĥe sa mère haha"/>
-                <Button class="btn" content="un truc toujours sah"></Button>
+            <Titre class="icon-title" content="Daniel"/>
+            <Paragraph class="p" content="Daniel ,notre Ingénieur web un expert en développement web qui grace à son diplôme MIE (Math informatique et Électronique) transforme les idées en solutions digitales performantes"/>
         </div>
         <div class="gradient-purple">
-            <Titre class="icon-title" content="Un bail"/>
-            <Paragraph class="p" content="un paragraphe en bienguinnnnn le temps qu'elle me fasse un vrai paragraĥe sa mère haha"/>
-                <Button class="btn" content="un truc toujours sah"></Button>
+            <Paragraph class="p" content="Notre objectif et de propulser votre marque grâce à l’Authenticité , l’innovation, la créativité et la transparente, qui sont nos pilliers . Ensemble élaborons des stratégies sur mesure qui allient compréhension humaine et innovation technologique en s’appuyant sur vos valeurs et les principes fondamentaux de votre entreprise"/>
+            <Button class="btn" content="Partant ?" link="contact" ></Button>
         </div>
     </section>
 </template>
