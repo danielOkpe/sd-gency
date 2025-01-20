@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
@@ -74,6 +73,8 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-=======
-# sd-gency
->>>>>>> f07296153a9527da12a73e50d59167069f0cb497
+
+
+# sd Agency project
+
+TODO - Faire en sorte que le menu mobile slide vers le bas lors de son apparission
