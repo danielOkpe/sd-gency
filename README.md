@@ -77,4 +77,4 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 # sd Agency project
 
-TODO - Faire en sorte que le menu mobile slide vers le bas lors de son apparission
+TODO - Faire en sorte que le menu mobile slide vers le bas lors de son apparition
