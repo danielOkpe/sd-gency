@@ -52,7 +52,7 @@ template{
     width: 100%;
     height: 50vh;
     background-image: url("/assets/background.png");
-    background-size: 100% auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -67,6 +67,7 @@ template{
 .sd-p{
     font-size: 15px;
     margin-bottom: 50px;
+    max-width: 90%;
 }
 
 .footer{
@@ -170,6 +171,7 @@ template{
 .form-btn{
     background-color :#4b0082 ;
     color: white;
+    max-width: 200px;
 }
 
 
@@ -191,6 +193,99 @@ template{
         transform: translateY(0);
     }
 }
+
+
+/*                         Responsiveness                         */
+
+
+@media (max-width: 950px) {
+   
+
+    .white,
+    .gradient-purple {
+        width: 25%; 
+    }
+}
+
+@media (max-width: 600px) {
+    /* Redimensionnement des sections */
+    .header {
+      width: 100%;
+    }
+
+    .about {
+        width: 90%;
+        padding: 15px;
+        opacity: 1; /* S'assurer que l'élément est visible */
+    }
+
+    .sd-p {
+        font-size: 14px; /* Taille de police plus petite */
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    /* Réorganiser la section footer en colonne */
+    .footer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding-top: 20px;
+    }
+
+    /* Adapter la largeur des sections dans le footer */
+    .white,
+    .blue,
+    .gradient-purple {
+        width: 90%; /* Utiliser la largeur totale de l'écran */
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .blue{
+        width: 95%;
+    }
+
+    /* Ajuster le texte et la taille des titres */
+    .blue #icon1-title,
+    .network-title,
+    #about-title {
+        font-size: 28px;
+    }
+
+    .blue .p,
+    .white .p,
+    .gradient-purple .p {
+        font-size: 14px;
+    }
+
+    /* Ajuster les icônes */
+    .icons {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* Bouton centré dans l'interface mobile */
+    .form-btn-div {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-btn {
+        background-color: #4b0082;
+        color: white;
+    }
+}
+
+@media (max-width:400px) {
+    .header{
+        height: 60vh;
+    }
+    
+}
 </style>
 
 <script setup lang="ts">
@@ -198,10 +293,4 @@ import Titre from '~/components/Titre.vue';
 import Paragraph from '~/components/Paragraph.vue';
 import Icon from '~/components/Icon.vue';
 import Button from '~/components/Button.vue';
-
-
-
-
-
-
 </script>
