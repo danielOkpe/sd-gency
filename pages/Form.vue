@@ -1,13 +1,13 @@
 <template>
-
+<div class="container">
     <section>
         <h2>Discutons de votre projet</h2>
-        <p>Grace a ce questionnaire nous comprendrons mieux vos besoins 
+        <p class="p-questionnaire">Grace a ce questionnaire nous comprendrons mieux vos besoins 
             afin de vous proposer des services sur mesures </p>
     </section>
     
     <form action="">
-        <section id="step-1">
+        <section id="step-1" class="steps"  v-if="step === 1">
             <h3>Parlons un peu de vous</h3>
             <div class="name-area">
                 <label for="name">Nom :</label>
@@ -17,17 +17,22 @@
                 <label for="firstName">Prénom :</label>
                 <input type="text" id="firstName" name="firstName" required>
             </div>
-            <div>
+            <div class="email-area">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="companyPart-area">
+                <div>
                 <h4>Êtes-vous une entreprise ?</h4>
                 <div class="isCompany-area">
-                    <input type="radio" id="yes" name="company" value="yes">
+                    <input type="radio" id="yes" name="company" value="yes" v-model="isCompany" >
                     <label for="yes">Oui</label>
 
-                    <input type="radio" id="no" name="company" value="no">
+                    <input type="radio" id="no" name="company" value="no" v-model="isCompany">
                     <label for="no">Non</label>
                 </div>
             </div>    
-            <div class="companyPart">
+            <div class="companyPart" v-if="isCompany === 'yes'">
                 <div class="companyName-area">
                     <label for="companyName">Nom de l'entreprise :</label>
                     <input type="text" id="companyName" name="companyName">
@@ -44,9 +49,12 @@
                     </select>
                 </div>      
             </div>   
+            </div>
+            
+            <button @click="nextStep">Suivant</button>
         </section>
-        <section id="step-2">
-            <h3>Etape 2</h3>
+        <section id="step-2" class="steps" v-if="step === 2">
+            <h3>Votre présence sur internet</h3>
             <div class="website-area">
                 <h4>Site web existant ?</h4>  
                 <div class="websiteCheckbox-area">
@@ -82,8 +90,11 @@
                     <label for="pinterest">Pinterest</label>
                 </div>
             </div>
-        </section>
-        <section id="step-3">
+            <div class="button-area">        
+                <button @click="previousStep">Précédent</button>
+                <button @click="nextStep">Suivant</button>
+            </div>        </section>
+        <section id="step-3" class="steps" v-if="step === 3" >
             <h3>Vos objectifs</h3>
             <div class="goals-area">
                 <h4>Quels sont vos objectifs actuel ?</h4>
@@ -99,21 +110,95 @@
 
                 </div>
             </div>
+            <div class="button-area">
+                <button @click="previousStep">Précédent</button>
+                <button @click="nextStep">Suivant</button>
+            </div>
+
         </section>
-        <section id="step-4">
+        <section id="step-4" class="steps" v-if="step === 4">
             <p>Merci d'avoir répondu à ce questionnaire, cliquez sur le bouton 'Recevoir mon devis' et nous vous contacterons prochainement </p>
-            <button type="submit">Recevoir mon devis</button>
+            <div class="button-area">
+                <button @click="previousStep">Précédent</button>
+                <button type="submit">Recevoir mon devis</button>   
+            </div>
         </section>
        
     </form>
+</div>
+    
 
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+const step : Ref<number> = ref(1);
+const isCompany = ref('');
+
+
+const nextStep = () => {
+    step.value++;
+}
+
+const previousStep = () => {
+    step.value--;
+}
+
 
 </script>
 
 <style scoped> 
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: black;
+    height: calc(100vh - 60px);
+}
+
+h2{
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.p-questionnaire{
+    font-size: 1rem;
+    text-align: center;
+}   
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.steps{
+    background-color: #907dd3;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 12vh;
+    width: 500px; 
+    max-height: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajout d'un effet visuel */
+}
+
+.companyPart-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    gap: 10px;
+}
+
 button{
     border-radius: 30px;
     border: none;
@@ -127,7 +212,5 @@ button:hover{
     scale:1.1;
 }
 
-.companyPart{
-    display: none;
-}
+
 </style>
