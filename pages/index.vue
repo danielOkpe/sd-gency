@@ -15,7 +15,7 @@ SD Agency est une agence spécialisée dans le design web, le copywriting et le 
             </a>
         </div>
         <div class="form-btn-div">
-            <Button color="white" link="services" class="form-btn" content="Besoin d'un service ?">
+            <Button color="white" link="form" class="form-btn" content="Besoin d'un service ?">
                 
             </Button>
         </div>
