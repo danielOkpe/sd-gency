@@ -18,7 +18,7 @@
                 <input type="text" id="firstName" name="firstName" required>
             </div>
             <div>
-                <caption>Êtes-vous une entreprise ?</caption>
+                <h4>Êtes-vous une entreprise ?</h4>
                 <div class="isCompany-area">
                     <input type="radio" id="yes" name="company" value="yes">
                     <label for="yes">Oui</label>
@@ -48,7 +48,7 @@
         <section id="step-2">
             <h3>Etape 2</h3>
             <div class="website-area">
-                <caption>Site web existant ?</caption>  
+                <h4>Site web existant ?</h4>  
                 <div class="websiteCheckbox-area">
                     <input type="radio" id="yes" name="website" value="yes">
                     <label for="yes">Oui</label>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="socialNetwork-area">
-                <caption>Réseaux sociaux utilisé :</caption>
+                <h4>Réseaux sociaux utilisé :</h4>
                 <div class="socialNetworkCheckbox-area">
                     <input type="checkbox" id="facebook" name="facebook">
                     <label for="facebook">Facebook</label>
@@ -86,7 +86,7 @@
         <section id="step-3">
             <h3>Vos objectifs</h3>
             <div class="goals-area">
-                <caption>Quels sont vos objectifs actuel ?</caption>
+                <h4>Quels sont vos objectifs actuel ?</h4>
                 <div class="goalsCheckbox-area">
                     <input type="checkbox" id="visibility" name="visibility">
                     <label for="visibility">Gagner en visibilité</label>
