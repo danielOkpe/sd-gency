@@ -5,8 +5,12 @@
             <p class="sd-p"><strong>L’agence où vos idées prennent vie.</strong>
 SD Agency est une agence spécialisée dans le design web, le copywriting et le développement web.
 Êtes-vous prêt à donner vie à vos idées ?</p>
-        <Titre class="network-title" content="Nos réseaux sociaux" />
-        <div class="icons">
+        <Titre class="network-title" content="Nous contacter" />
+        <div class="contact">
+            <div class="our-mail">
+                sdagency.contact@gmail.com
+            </div>
+            <div class="icons">
             <a href="https://www.instagram.com/the_sdagency/">
                 <Icon image="instagram" />
             </a>
@@ -14,6 +18,8 @@ SD Agency est une agence spécialisée dans le design web, le copywriting et le 
                 <Icon image="linkedin"/>
             </a>
         </div>
+        </div>
+       
         <div class="form-btn-div">
             <Button color="white" link="form" class="form-btn" content="Besoin d'un service ?">
                 
@@ -29,16 +35,16 @@ SD Agency est une agence spécialisée dans le design web, le copywriting et le 
         <div class="white">
             <Titre class="icon-title" content="Samira"/>
             <Paragraph class="p" content="Notre copywriter et spécialiste étudiante en psychologie et en sociologie. Grâce à son empathie et à ses compétences, elle cerne vos besoins et comprend les comportements de vos futurs clients pour créer des messages percutants et adaptés à vous de la manière la plus authentique."/>
-            <Button class="btn" content="En savoir plus"></Button>
+            <Button class="btn" content="En savoir plus" link="samira" ></Button>
         </div>
         <div class="white">
             <Titre class="icon-title" content="Daniel"/>
             <Paragraph class="p" content="Daniel, notre Ingénieur web un expert en développement web qui grace à son diplôme MIE (Math informatique et Électronique) transforme les idées en solutions digitales performantes."/>
-            <Button class="btn" content="En savoir plus"></Button>
+            <Button class="btn" content="En savoir plus" link="daniel" ></Button>
         </div>
         <div class="gradient-purple">
             <Paragraph class="p" content="Notre objectif et de propulser votre marque grâce à l’Authenticité, l’innovation, la créativité et la transparente, qui sont nos pilliers. Ensemble élaborons des stratégies sur mesure qui allient compréhension humaine et innovation technologique en s’appuyant sur vos valeurs et les principes fondamentaux de votre entreprise."/>
-            <Button class="btn" content="Partant ?" link="contact" ></Button>
+            <Button class="btn" content="Partant ?" link="form" ></Button>
         </div>
     </section>
 </template>
@@ -62,6 +68,13 @@ template{
     padding-top: 30px;
     opacity: 0;
     animation: appear 2s 0.3s ease forwards;
+}
+
+.our-mail{
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .sd-p{
@@ -156,6 +169,7 @@ template{
 
 .network-title{
     text-align: center;
+    font-size: 30px;
 }
 
 #about-title{

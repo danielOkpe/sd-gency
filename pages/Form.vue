@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <section>
+      <section class="header">
         <h2>Discutons de votre projet</h2>
         <p class="p-questionnaire">
           Grâce à ce questionnaire, nous comprendrons mieux vos besoins afin de vous proposer des services sur mesure.
@@ -137,6 +137,7 @@
           </div>
         </section>
       </form>
+      <Button content="Revenir à l'accueil" link="/"></Button>
     </div>
   </template>
   
@@ -144,6 +145,7 @@
   import { ref } from 'vue';
   import { reactive } from 'vue';
   import { useToast } from 'vue-toastification';
+  import Button from '~/components/Button.vue';
 
   const toast = useToast();
   const step = ref(1);
@@ -233,17 +235,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     background-color: #f7f9fc;
-    color: #333;
+    color: #fff;
     min-height: calc(100vh - 60px);
+    
+    background-image: url("/assets/background.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
   }
   
   h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    margin-top: 20px;
+    font-size: 2.5rem;
     text-align: center;
-    color: #555;
+    color: #fff;
   }
 
   h3{
@@ -251,10 +262,12 @@
   }
   
   .p-questionnaire {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
-    margin-bottom: 30px;
-    color: #555;
+    color: #fff;
+    max-width: 60%;
+    margin: auto;
+    font-weight: bold;
   }
   
   .steps {
@@ -264,6 +277,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
     animation: fadeIn 0.7s ease-in-out;
+    min-width: 300px;
   }
   
   .step-indicator {

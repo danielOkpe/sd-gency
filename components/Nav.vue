@@ -13,9 +13,7 @@
                 <li>
                     <NuxtLink to="/">Consultation personnalisée</NuxtLink>
                 </li>
-                <li>
-                    <NuxtLink to="/contact">Contact</NuxtLink>
-                </li>
+
             </span>
             
             <!-- Menu hamburger pour mobile -->
