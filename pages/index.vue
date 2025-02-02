@@ -78,7 +78,7 @@ template{
 }
 
 .sd-p{
-    font-size: 15px;
+    font-size: 16px;
     margin-bottom: 50px;
     max-width: 90%;
 }
