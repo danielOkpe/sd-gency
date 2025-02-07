@@ -4,7 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   build:{
     transpile: ['vue-toastification'],
-  } 
+  },
+  modules: ['@vueuse/motion/nuxt'] 
 })
+
 
 

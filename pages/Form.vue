@@ -265,7 +265,7 @@
     font-size: 1.2rem;
     text-align: center;
     color: #fff;
-    max-width: 60%;
+    max-width: 80%;
     margin: auto;
     font-weight: bold;
   }
@@ -277,7 +277,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
     animation: fadeIn 0.7s ease-in-out;
-    min-width: 300px;
+    min-width: 250px;
   }
   
   .step-indicator {
@@ -378,4 +378,28 @@
       transform: translateX(0);
     }
   }
+
+  /*responsive*/
+  @media screen and (max-width:767px) {
+
+    .steps{
+      padding-bottom: 25px;
+      padding-top: 30px;
+      max-width: 300px;
+    }
+
+    h2{
+      font-size: 2em;
+    }
+
+    .p-questionnaire{
+      font-size: 1.1em;
+    }
+
+    .button-area button{
+      padding:  12px 10px;
+    }
+    
+  }
+
   </style>

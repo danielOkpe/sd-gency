@@ -28,7 +28,14 @@ body{
   /*background-color: #4b0082; partie sombre du dégradé*/
   /*background-color: #9b59b6; partie clair du dégradé*/
   color: white;
-}
+  overflow-x: hidden; /* Hide vertical scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: 0;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;  
+  }
 
 .nav{
   opacity: 0;

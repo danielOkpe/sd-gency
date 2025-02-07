@@ -84,12 +84,12 @@ img{
 }
 
 h2{
-    font-size: 2.5em;
+    font-size: 2em;
     color: white;
 }
 
 h3{
-    font-size: 1.7em;
+    font-size: 1.3em;
     color: white;
 }
 
@@ -102,7 +102,7 @@ section{
     gap: 10px;
     padding-left: calc(4% + 150px);
     opacity: 0;
-    animation: appear 2s 0.5s ease forwards; ;
+    animation: appear 1.5s ease forwards; ;
 }
 
 .block{
@@ -132,12 +132,12 @@ section{
 .about p {
     max-width: 60%;
     margin-left: calc(150px);
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 div{
     color: white;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .buttons{

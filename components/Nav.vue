@@ -5,13 +5,12 @@
             <span class="left-links">
                 <li><NuxtLink to="/">Home</NuxtLink></li>
                 <li><NuxtLink to="/services">Nos services</NuxtLink></li>
-                <li><NuxtLink to="/agency">Nos Packs</NuxtLink></li>
             </span>
 
             <!-- Partie droite -->
             <span class="right-links">
                 <li>
-                    <NuxtLink to="/">Consultation personnalisée</NuxtLink>
+                    <NuxtLink to="/">Formations</NuxtLink>
                 </li>
 
             </span>
@@ -28,9 +27,7 @@
         <ul class="mobile-menu" id="mobile-menu" v-if="menuOpen">
             <li><NuxtLink to="/">Home</NuxtLink></li>
             <li><NuxtLink to="/services">Nos services</NuxtLink></li>
-            <li><NuxtLink to="/agency">Nos Packs</NuxtLink></li>
-            <li><NuxtLink to="/">Consultation personnalisée</NuxtLink></li>
-            <li><NuxtLink to="/contact">Contact</NuxtLink></li>
+            <li><NuxtLink to="/">Formations</NuxtLink></li>
         </ul>
     </nav>
 </template>
