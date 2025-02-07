@@ -51,7 +51,7 @@
       setTimeout(()=>{
         isLoading.value = false;
         container.classList.remove("hidden");
-      }, 3000)
+      }, 2500)
   
     })
   </script>

@@ -14,7 +14,7 @@
         :duration="1200"
         class="header"
     >
-            <img >
+            <img class="daniel-photo" >
             <h2>Daniel</h2>
         <p> Paragraphe qui résume Daniel</p>
     </section>
@@ -57,15 +57,12 @@
     >
         <h3>Compétences techniques</h3>
         <div class="hard-skills" ref="skillList">
-            <div>Java</div>
-            <div>Python</div>
-            <div>HTML/CSS</div>
-            <div>JavaScript</div>
-            <div>TypeScript</div>
-            <div>Vuejs</div>
-            <div>Angular</div>
-            <div>Spring</div>
-            <div>FastApi</div>
+            <img alt="logo Java" src="/public/assets/java.svg">
+            <img alt="logo Python" src="/public/assets/python.svg">
+            <img alt="logo HTML" src="/public/assets/html-5-logo.svg" > 
+            <img alt="logo CSS" src="/public/assets/css3-logo.svg">
+            <img alt="logo JavaScript" src="/public/assets/Javascript_badge.svg">
+            <img alt="logo TypeScript" src="/public/assets/TypeScript_ESLint_logo.svg">
         </div>
     </section>
 
@@ -149,7 +146,8 @@ onMounted(() => {
   if(skills){
     for (let i = 0; i < skills.length; i++) {
       const skill = skills[i] as HTMLElement;
-      skill.style.backgroundColor = 'red';
+      skill.style.backgroundColor = '#fff';
+      skill.style.padding = "5px";
   }
 }
 
@@ -164,21 +162,20 @@ onUnmounted(() => {
 <style scoped>
 .container {
   min-height: calc(100vh - 60px);
-  background-color: black;
-
+  background: linear-gradient(135deg, #08081F, #1B2B6F, #000033);
 }
 section{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40vh 0;  
+    padding: 39vh 0;  
     text-align: center;
 }
 
-img{
-    width: 150px;
-    height: 150px;
+.daniel-photo{
+    width: 250px;
+    height: 250px;
     border-radius: 100%;
     border: white 5px solid;
 }
@@ -211,12 +208,31 @@ h3{
   width: 90%;
 }
 
+.hard-skills img{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    margin: auto;
+}
+
 .experiences{
   width: 90%;
+  font-size: 1.7em;
 }
 
 .formations{
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  font-size: 1.7em;
+}
+
+.soft-skills{
+    display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  font-size: 1.8em;
 }
 
 .experience-section{

@@ -2,14 +2,13 @@
     <div class="container">
     <section class="presentation">
         <div class="header">
-            <img >
+            <img class="samira-photo">
             <h2>Samira</h2>
         </div>
         <div class="about">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium explicabo modi,sjdnhqsofnqoifjqoifjqoifsqoijf</p>
         </div>
     </section>
-
 
     <section>
         <h3>Formations</h3>
@@ -76,7 +75,7 @@ justify-content: space-between;
 gap: 20px;
 }
 
-img{
+.samira-photo{
     width: 150px;
     height: 150px;
     border-radius: 100%;
