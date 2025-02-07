@@ -10,7 +10,7 @@
             <!-- Partie droite -->
             <span class="right-links">
                 <li>
-                    <NuxtLink to="/">Formations</NuxtLink>
+                    <NuxtLink to="formations">Formations</NuxtLink>
                 </li>
 
             </span>
@@ -27,7 +27,7 @@
         <ul class="mobile-menu" id="mobile-menu" v-if="menuOpen">
             <li><NuxtLink to="/">Home</NuxtLink></li>
             <li><NuxtLink to="/services">Nos services</NuxtLink></li>
-            <li><NuxtLink to="/">Formations</NuxtLink></li>
+            <li><NuxtLink to="formations">Formations</NuxtLink></li>
         </ul>
     </nav>
 </template>
