@@ -1,5 +1,7 @@
 <template>
-    <div class="container">
+     <Loader :isLoading="isLoading" message="Veuillez patienter..." />
+
+    <div class="container hidden" ref="container">
       <div class="card">
         <h1>Formation en Développement Web</h1>
         <p class="author">Proposée par Daniel</p>
@@ -34,16 +36,30 @@
     </div>
   </template>
   <script setup lang="ts">
+  import Loader from '~/components/Loader.vue';
+
+    const isLoading = ref(true);  
+    const containerRef = useTemplateRef('container')
+
     onMounted(()=> {
-        
+
+      const container :  HTMLElement = containerRef.value as HTMLElement;
       const recaptchaScript = document.createElement('script')
       recaptchaScript.setAttribute('src', 'https://assets.calendly.com/assets/external/widget.js')
-      document.head.appendChild(recaptchaScript)
-    
+      document.head.appendChild(recaptchaScript);
+      console.log("container :",containerRef.value)
+      setTimeout(()=>{
+        isLoading.value = false;
+        container.classList.remove("hidden");
+      }, 3000)
   
     })
   </script>
   <style scoped>
+
+  .hidden{
+    opacity: 0;
+  }
 
   /* Conteneur principal */
   .container {
