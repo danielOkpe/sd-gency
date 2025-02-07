@@ -4,7 +4,7 @@
             <Titre id="about-title"  content="SD Agency" />
             <p class="sd-p"><strong>L’agence où vos idées prennent vie.</strong>
 SD Agency est une agence spécialisée dans le design web, le copywriting et le développement web.
-Êtes-vous prêt à donner vie à vos idées ?</p>
+Êtes-vous prêt(e) à donner vie à vos idées ?</p>
         <Titre class="network-title" content="Nous contacter" />
         <div class="contact">
             <div class="our-mail">
@@ -30,20 +30,20 @@ SD Agency est une agence spécialisée dans le design web, le copywriting et le 
     <section class="footer">
         <div class="blue">
                 <Titre content="Qui sommes nous ?" id="icon1-title"/>
-                <Paragraph class="p" content="Nous sommes SD agency, votre agence spécialisée dans le Marketing digital, le développement web, le consulting et l’accompagnement digital. Grâce à vos partenaires digitaux Samira et Daniel dont la force réside dans la complémentarité vous avez à votre disposition plusieurs compétences." />           
+                <Paragraph class="p" content="Nous sommes SD Agency, votre agence spécialisée dans le marketing digital, le développement web, le consulting et l’accompagnement digital. Grâce à vos partenaires digitaux, Samira et Daniel, dont la force réside dans la complémentarité vous avez à votre disposition plusieurs compétences." />           
         </div>
         <div class="white">
             <Titre class="icon-title" content="Samira"/>
-            <Paragraph class="p" content="Notre copywriter et spécialiste étudiante en psychologie et en sociologie. Grâce à son empathie et à ses compétences, elle cerne vos besoins et comprend les comportements de vos futurs clients pour créer des messages percutants et adaptés à vous de la manière la plus authentique."/>
+            <Paragraph class="p" content="Notre copywriter et spécialiste, étudiante en psychologie et en sociologie. Grâce à son empathie et à ses compétences, elle cerne vos besoins et comprend les comportements de vos futurs clients pour créer des messages percutants et adaptés à vous de la manière la plus authentique."/>
             <Button class="btn" content="En savoir plus" link="samira" ></Button>
         </div>
         <div class="white">
             <Titre class="icon-title" content="Daniel"/>
-            <Paragraph class="p" content="Daniel, notre Ingénieur web un expert en développement web qui grace à son diplôme MIE (Math informatique et Électronique) transforme les idées en solutions digitales performantes."/>
+            <Paragraph class="p" content="Daniel, notre ingénieur web expert en développement web, qui grâce à son diplôme MIE (Mathématiques, Informatique et Électronique) transforme les idées en solutions digitales performantes."/>
             <Button class="btn" content="En savoir plus" link="daniel" ></Button>
         </div>
         <div class="gradient-purple">
-            <Paragraph class="p" content="Notre objectif et de propulser votre marque grâce à l’Authenticité, l’innovation, la créativité et la transparente, qui sont nos pilliers. Ensemble élaborons des stratégies sur mesure qui allient compréhension humaine et innovation technologique en s’appuyant sur vos valeurs et les principes fondamentaux de votre entreprise."/>
+            <Paragraph class="p" content="Notre objectif est de propulser votre marque grâce à l’authenticité, l’innovation, la créativité et la transparence, qui sont nos pilliers. Ensemble, élaborons des stratégies sur mesure qui allient compréhension humaine et innovation technologique en s’appuyant sur vos valeurs et les principes fondamentaux de votre entreprise."/>
             <Button class="btn" content="Partant ?" link="form" ></Button>
         </div>
     </section>
