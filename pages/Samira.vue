@@ -72,7 +72,7 @@ background-color: blueviolet;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-gap: 20px;
+gap: 4vh;
 }
 
 .samira-photo{
@@ -129,7 +129,7 @@ section{
 }
 
 .about p {
-    max-width: 60%;
+    max-width: 90%;
     margin-left: calc(150px);
     font-size: 1em;
 }
@@ -156,5 +156,41 @@ div{
         transform: translateY(0);
     }
 }   
+
+/*responsive*/
+
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    section{
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .samira-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about p {
+        margin: auto;
+        text-align: center;
+    }
+
+    .presentation{
+        gap: 1vh;
+    }
+}
 
 </style>
