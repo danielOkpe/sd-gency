@@ -402,4 +402,22 @@
     
   }
 
+  @media screen and (max-width: 345px) {
+    .steps{
+      padding: 15px 25px;
+    }
+    input{
+      width: 80%;
+    }
+
+    h2{
+      font-size: 1.8em;
+    }
+
+    .p-questionnaire{
+      font-size: 1em;
+    }
+    }
+
+
   </style>

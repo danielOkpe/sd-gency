@@ -275,4 +275,11 @@ h3{
   
 }
 
+@media screen and (max-width: 345px) {
+    .hard-skills img{
+        max-width: 40px;
+        max-height: 40px;
+    }
+}
+
 </style>
