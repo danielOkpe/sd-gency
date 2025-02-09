@@ -258,6 +258,10 @@ h3{
     .hard-skills{
       font-size: 1em;
     }
+    .hard-skills img{
+        max-width: 50px;
+        max-height: 50px;
+    }
     .soft-skills{
       font-size: 1.3em;
     }
