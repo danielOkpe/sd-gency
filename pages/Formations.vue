@@ -23,7 +23,7 @@
             💻 Séances de 1h : <span>15€</span>
           </p>
           <p>Réserve ta première visio gratuite pour définir tes besoins :</p>
-          <div class="calendly-inline-widget" data-url="https://calendly.com/dnlokpe1/coiffure" style="width:600px;"></div>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/dnlokpe1/coiffure" ></div>
 
         </div>
   
@@ -67,7 +67,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 20px;
     background: linear-gradient(135deg, #1b0033, #002b55, #003577);
     min-height: calc(100vh - 60px);
   }
@@ -75,7 +74,8 @@
   /* Carte centrale */
   .card {
     max-width: 800px;
-    width: 100%;
+    width: 90%;
+    margin: 10px;
     background: linear-gradient(145deg, #320054, #001e3c);
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
@@ -152,6 +152,7 @@
     overflow: hidden;
     scrollbar-width: 0;
     height: 850px;
+    width: 100%;
     margin: auto;
   }
   
@@ -177,6 +178,14 @@
   .cta-button:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 80%;
+      padding: 20px;
+      margin: 20px;
+    }
   }
   </style>
   
