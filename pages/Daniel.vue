@@ -242,9 +242,9 @@ h3{
 /*responsive*/  
 
 @media screen and (max-width: 768px){
-    img{
-        width: 100px;
-        height: 100px;
+    .daniel-photo{
+        width: 180px;
+        height: 180px;
     }
     h2{
         font-size: 2em;
