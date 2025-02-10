@@ -5,7 +5,22 @@ export default defineNuxtConfig({
   build:{
     transpile: ['vue-toastification'],
   },
-  modules: ['@vueuse/motion/nuxt'] 
+  modules: [
+    '@vueuse/motion/nuxt',
+    [
+      '@vee-validate/nuxt',
+      {
+        // disable or enable auto imports
+        autoImports: true,
+        // Use different names for components
+        componentNames: {
+          Form: 'VeeForm',
+          Field: 'VeeField',
+          FieldArray: 'VeeFieldArray',
+          ErrorMessage: 'VeeErrorMessage',
+        },
+      },
+    ],  ] 
 })
 
 
