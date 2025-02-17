@@ -7,46 +7,46 @@
         </p>
       </section>
   
-      <Form as="v-form"  @submit.prevent="submitForm">
+      <Form @submit="submitForm" :validation-schema="validationSchemas">
         <!-- Étape 1 -->
         <section id="step-1" class="steps" v-if="step === 1">
           <div class="step-indicator">Étape {{ step }} / 4</div>
           <h3>Parlons un peu de vous</h3>
           <div class="form-group">
             <label for="name">Nom :</label>
-            <Field type="text" id="name" name="name" v-model="form.name" required />
+            <Field type="text" id="name" name="name" required />
             <ErrorMessage name="name"></ErrorMessage>
           </div>
           <div class="form-group">
             <label for="firstName">Prénom :</label>
-            <Field type="text" id="firstName" name="firstName" v-model="form.firstName" required />
+            <Field type="text" id="firstName" name="firstName" required />
             <ErrorMessage name="firstName"></ErrorMessage>
           </div>
           <div class="form-group">
             <label for="email">Email :</label>
-            <Field type="email" id="email" name="email" v-model="form.email" required />
+            <Field type="email" id="email" name="email" required />
             <ErrorMessage name="email"></ErrorMessage>
           </div>
           <div class="form-group">
             <h4>Êtes-vous une entreprise ?</h4>
             <div class="radio-group">
-              <Field type="radio" id="yes" name="isCompany" value="yes" v-model="form.isCompany" />
+              <Field type="radio" id="yes" name="isCompany" value="yes" />
               <label for="yes">Oui</label>
   
-              <Field type="radio" id="no" name="isCompany" value="no" v-model="form.isCompany" />
+              <Field type="radio" id="no" name="isCompany" value="no" />
               <label for="no">Non</label>
             </div>
             <ErrorMessage name="isCompany"></ErrorMessage>
           </div>
-          <div class="company-details" v-if="form.isCompany === 'yes'">
+          <div class="company-details" v-if="isCompany === 'yes'">
             <div class="form-group">
               <label for="companyName">Nom de l'entreprise :</label>
-              <Field type="text" id="companyName" name="companyName" v-model="form.companyName" />
+              <Field type="text" id="companyName" name="companyName" />
               <ErrorMessage name="companyName"></ErrorMessage>
             </div>
             <div class="form-group">
               <label for="companySize">Taille de l'entreprise :</label>
-              <Field id="companySize" name="companySize" v-model="form.companySize" as="select">
+              <Field id="companySize" name="companySize" as="select">
                 <option value="1-10">1-10</option>
                 <option value="11-50">11-50</option>
                 <option value="51-200">51-200</option>
@@ -69,36 +69,36 @@
           <div class="form-group">
             <h4>Site web existant ?</h4>
             <div class="radio-group">
-              <input type="radio" id="website-yes" name="website" value="yes" v-model="form.isGetWebsite" />
+              <input type="radio" id="website-yes" name="website" value="yes" />
               <label for="website-yes">Oui</label>
   
-              <input type="radio" id="website-no" name="website" value="no" v-model="form.isGetWebsite" />
+              <input type="radio" id="website-no" name="website" value="no" />
               <label for="website-no">Non</label>
   
-              <input type="radio" id="website-inProgress" name="website" value="inProgress" v-model="form.isGetWebsite" />
+              <input type="radio" id="website-inProgress" name="website" value="inProgress"/>
               <label for="website-inProgress">En cours</label>
             </div>
-            <ErrorMessage name="website"></ErrorMessage>
+            <ErrorMessage name="isGetWebsite"></ErrorMessage>
           </div>
           <div class="form-group">
             <h4>Réseaux sociaux utilisés :</h4>
             <div class="checkbox-group">
-              <input type="checkbox" id="instagram" name="instagram" v-model="form.socialNetworks.instagram" />
+              <Field type="checkbox" id="instagram" name="socialNetworks.instagram" :value="true" />
               <label for="instagram">Instagram</label>
   
-              <input type="checkbox" id="linkedin" name="linkedin" v-model="form.socialNetworks.linkedin" />
+              <Field type="checkbox" id="linkedin" name="socialNetworks.linkedin" :value="true"/>
               <label for="linkedin">LinkedIn</label>
   
-              <input type="checkbox" id="twitter" name="twitter" v-model="form.socialNetworks.twitter" />
+              <Field type="checkbox" id="twitter" name="socialNetworks.twitter" :value="true"/>
               <label for="twitter">Twitter</label>
   
-              <input type="checkbox" id="tiktok" name="tiktok" v-model="form.socialNetworks.tiktok" />
+              <Field type="checkbox" id="tiktok" name="socialNetworks.tiktok" :value="true"/>
               <label for="tiktok">TikTok</label>
   
-              <input type="checkbox" id="facebook" name="facebook" v-model="form.socialNetworks.facebook" />
+              <Field type="checkbox" id="facebook" name="socialNetworks.facebook" :value="true"/>
               <label for="facebook">Facebook</label>
 
-              <input type="checkbox" id="other_networks" name="other_networks" v-model="form.socialNetworks.other_networks" />
+              <Field type="checkbox" id="other_networks" name="socialNetworks.other_networks" :value="true"/>
               <label for="other_networks">Autre</label>
             </div>
           </div>
@@ -115,13 +115,13 @@
           <div class="form-group">
             <h4>Quels sont vos objectifs actuels ?</h4>
             <div class="checkbox-group">
-              <input type="checkbox" id="visibility" name="visibility" v-model="form.goals.visibility" />
+              <Field type="checkbox" id="visibility" name="visibility" :value="true" />
               <label for="visibility">Gagner en visibilité</label>
   
-              <input type="checkbox" id="credibility" name="credibility" v-model="form.goals.credibility" />
+              <Field type="checkbox" id="credibility" name="credibility" :value="true"/>
               <label for="credibility">Gagner en crédibilité</label>
   
-              <input type="checkbox" id="other" name="goals" v-model="form.goals.other" />
+              <Field type="checkbox" id="other" name="goals" :value="true"/>
               <label for="other">Autre</label>
             </div>
           </div>
@@ -156,39 +156,48 @@
   import Button from '~/components/Button.vue';
   import { Field, ErrorMessage, Form } from 'vee-validate';
   import { useForm } from 'vee-validate';
+  import { toTypedSchema } from '@vee-validate/zod';
 
 
 
   const toast = useToast();
-  const step = ref(1);
+  const step = ref<number>(1);
   const url = "https://formspree.io/f/mjkgglky";
 
-  const validationSchema = z.object({
-  name: z.string().min(1, "Le nom est requis"),
-  firstName: z.string().min(1, "Le prénom est requis"),
-  email: z.string().min(1, "Un email est requis").email("Email invalide"),
-  isCompany: z.enum(["yes", "no"], { required_error: "Sélectionnez une option" }),
-  companyName: z.string().optional(),
-  companySize: z.string().optional(),
-  isGetWebsite: z.enum(["yes", "no", "inProgress"]).optional(),
-  goals: z.object({
-    visibility: z.boolean(),
-    credibility: z.boolean(),
-    other: z.boolean(),
-  })/*.refine(goals => Object.values(goals).some(value => value), {
-    message: "Sélectionnez au moins un objectif",
-  })*/,
-  socialNetworks: z.object({
-    instagram: z.boolean(),
-    linkedin: z.boolean(),
-    twitter: z.boolean(),
-    tiktok: z.boolean(),
-    facebook: z.boolean(),
-    other_networks: z.boolean(),
-  })/*.refine(socialNetworks => Object.values(socialNetworks).some(value => value), {
-    message: "Sélectionnez au moins un réseau social",
-  })*/,
-});
+  const validationSchemas: { [key: number]: z.ZodObject<any> } = {
+    1: z.object({
+      name: z.string().min(1, "Le nom est requis"),
+      firstName: z.string().min(1, "Le prénom est requis"),
+      email: z.string().min(1, "Un email est requis").email("Email invalide"),
+      isCompany: z.enum(["yes", "no"], { required_error: "Sélectionnez une option" }),
+      companyName: z.string().optional(),
+      companySize: z.string().optional(),
+    }),
+  
+    2: z.object({
+      isGetWebsite: z.enum(["yes", "no", "inProgress"]).optional(),
+      socialNetworks: z.object({
+        instagram: z.boolean(),
+        linkedin: z.boolean(),
+        twitter: z.boolean(),
+        tiktok: z.boolean(),
+        facebook: z.boolean(),
+        other_networks: z.boolean(),
+      }).refine(socialNetworks => Object.values(socialNetworks).some(value => value), {
+        message: "Sélectionnez au moins un réseau social",
+      }),
+    }),
+  
+    3: z.object({
+      goals: z.object({
+        visibility: z.boolean(),
+        credibility: z.boolean(),
+        other: z.boolean(),
+      }).refine(goals => Object.values(goals).some(value => value), {
+        message: "Sélectionnez au moins un objectif",
+      }),
+    }),
+  };
 
 
   const form = reactive({
@@ -203,7 +212,7 @@
     credibility: false,
     other: false,
   },
-  isGetWebsite: "",
+  isGetWebsite: "no",
   socialNetworks: {
     other_networks: false,
     instagram: false,
@@ -217,22 +226,27 @@
 
 
   const { validate } = useForm({
-    validationSchema,
+    validationSchema: validationSchemas,
   });
 
   const nextStep = async (e: Event) => {
     e.preventDefault();
    try {
-      /*const result = await validate();
-      if (!result.valid) {
+    const currentValidationSchema = validationSchemas[step.value];
+    const  { error }  = await currentValidationSchema.safeParseAsync(validationSchemas);
+
+    if (error) {
       toast.error("Veuillez remplir tous les champs obligatoires.");
-      console.log("mais wssh")
+      console.log(error)
       return;
-    }*/
-    if (step.value < 4){
+    }else{
+
+      if (step.value < 4){
       step.value++;
-    }} catch(error){
-      console.log("schema ", validationSchema)
+    }
+    }
+   } catch(error){
+      console.log("schema ", validationSchemas)
     }
   }
   
