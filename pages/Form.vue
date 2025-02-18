@@ -7,25 +7,31 @@
         </p>
       </section>
   
-      <Form @submit="submitForm" :validation-schema="validationSchemas">
+      <Form 
+       @submit="nextStep"
+       :validation-schema="currentSchema"
+       keep-values
+       v-slot="{ handleSubmit, values }"
+       class="form"
+      > 
         <!-- Étape 1 -->
-        <section id="step-1" class="steps" v-if="step === 1">
-          <div class="step-indicator">Étape {{ step }} / 4</div>
+        <section id="step-1" class="steps" v-if="step === 0">
+          <div class="step-indicator">Étape {{ step + 1  }} / 4</div>
           <h3>Parlons un peu de vous</h3>
           <div class="form-group">
             <label for="name">Nom :</label>
             <Field type="text" id="name" name="name" required />
-            <ErrorMessage name="name"></ErrorMessage>
+            <ErrorMessage name="name" />
           </div>
           <div class="form-group">
             <label for="firstName">Prénom :</label>
             <Field type="text" id="firstName" name="firstName" required />
-            <ErrorMessage name="firstName"></ErrorMessage>
+            <ErrorMessage name="firstName" />
           </div>
           <div class="form-group">
             <label for="email">Email :</label>
             <Field type="email" id="email" name="email" required />
-            <ErrorMessage name="email"></ErrorMessage>
+            <ErrorMessage name="email" />
           </div>
           <div class="form-group">
             <h4>Êtes-vous une entreprise ?</h4>
@@ -36,13 +42,13 @@
               <Field type="radio" id="no" name="isCompany" value="no" />
               <label for="no">Non</label>
             </div>
-            <ErrorMessage name="isCompany"></ErrorMessage>
+            <ErrorMessage name="isCompany" />
           </div>
-          <div class="company-details" v-if="isCompany === 'yes'">
+          <div class="company-details" v-if="values.isCompany === 'yes'" >
             <div class="form-group">
               <label for="companyName">Nom de l'entreprise :</label>
               <Field type="text" id="companyName" name="companyName" />
-              <ErrorMessage name="companyName"></ErrorMessage>
+              <ErrorMessage name="companyName" />
             </div>
             <div class="form-group">
               <label for="companySize">Taille de l'entreprise :</label>
@@ -54,31 +60,28 @@
                 <option value="501-1000">501-1000</option>
                 <option value="1000+">1000+</option>
               </Field>
-              <ErrorMessage name="companySize"></ErrorMessage>
+              <ErrorMessage name="companySize" />
             </div>
-          </div>
-          <div id="btn-step-1" >
-            <button class="btn-primary" @click="nextStep">Suivant</button>
           </div>
         </section>
   
         <!-- Étape 2 -->
-        <section id="step-2" class="steps" v-if="step === 2">
-          <div class="step-indicator">Étape {{ step }} / 4</div>
+        <section id="step-2" class="steps" v-if="step === 1">
+          <div class="step-indicator">Étape {{ step + 1  }} / 4</div>
           <h3>Votre présence sur internet</h3>
           <div class="form-group">
             <h4>Site web existant ?</h4>
             <div class="radio-group">
-              <input type="radio" id="website-yes" name="website" value="yes" />
+              <Field type="radio" id="website-yes" name="isGetWebsite" value="yes" />
               <label for="website-yes">Oui</label>
   
-              <input type="radio" id="website-no" name="website" value="no" />
+              <Field type="radio" id="website-no" name="isGetWebsite" value="no" />
               <label for="website-no">Non</label>
   
-              <input type="radio" id="website-inProgress" name="website" value="inProgress"/>
+              <Field type="radio" id="website-inProgress" name="isGetWebsite" value="inProgress"/>
               <label for="website-inProgress">En cours</label>
             </div>
-            <ErrorMessage name="isGetWebsite"></ErrorMessage>
+            <ErrorMessage name="isGetWebsite" />
           </div>
           <div class="form-group">
             <h4>Réseaux sociaux utilisés :</h4>
@@ -86,10 +89,10 @@
               <Field type="checkbox" id="instagram" name="socialNetworks.instagram" :value="true" />
               <label for="instagram">Instagram</label>
   
-              <Field type="checkbox" id="linkedin" name="socialNetworks.linkedin" :value="true"/>
+              <Field type="checkbox" id="linkedin" name="socialNetworks.linkedin" :value="true" />
               <label for="linkedin">LinkedIn</label>
   
-              <Field type="checkbox" id="twitter" name="socialNetworks.twitter" :value="true"/>
+              <Field type="checkbox" id="twitter" name="socialNetworks.twitter" :value="true" />
               <label for="twitter">Twitter</label>
   
               <Field type="checkbox" id="tiktok" name="socialNetworks.tiktok" :value="true"/>
@@ -98,51 +101,47 @@
               <Field type="checkbox" id="facebook" name="socialNetworks.facebook" :value="true"/>
               <label for="facebook">Facebook</label>
 
-              <Field type="checkbox" id="other_networks" name="socialNetworks.other_networks" :value="true"/>
+              <Field type="checkbox" id="other_networks" name="socialNetworks.other_networks" :value="true" />
               <label for="other_networks">Autre</label>
             </div>
-          </div>
-          <div class="button-area">
-            <button class="btn-secondary" @click="previousStep">Précédent</button>
-            <button class="btn-primary" @click="nextStep">Suivant</button>
+            <ErrorMessage name="socialNetworks" />
           </div>
         </section>
   
         <!-- Étape 3 -->
-        <section id="step-3" class="steps" v-if="step === 3">
-          <div class="step-indicator">Étape {{ step }} / 4</div>
+        <section id="step-3" class="steps" v-if="step === 2">
+          <div class="step-indicator">Étape {{ step + 1 }} / 4</div>
           <h3>Vos objectifs</h3>
           <div class="form-group">
             <h4>Quels sont vos objectifs actuels ?</h4>
             <div class="checkbox-group">
-              <Field type="checkbox" id="visibility" name="visibility" :value="true" />
+              <Field type="checkbox" id="visibility" name="goals.visibility" :value="true"  />
               <label for="visibility">Gagner en visibilité</label>
   
-              <Field type="checkbox" id="credibility" name="credibility" :value="true"/>
+              <Field type="checkbox" id="credibility" name="goals.credibility" :value="true"  />
               <label for="credibility">Gagner en crédibilité</label>
   
-              <Field type="checkbox" id="other" name="goals" :value="true"/>
+              <Field type="checkbox" id="other" name="goals.other" :value="true" />
               <label for="other">Autre</label>
             </div>
+            <ErrorMessage name="goals" />
           </div>
-          <div class="button-area">
-            <button class="btn-secondary" @click="previousStep">Précédent</button>
-            <button class="btn-primary" @click="nextStep">Suivant</button>
-          </div>
+        
         </section>
   
         <!-- Étape 4 -->
-        <section id="step-4" class="steps" v-if="step === 4">
-          <div class="step-indicator">Étape {{ step }} / 4</div>
+        <section id="step-4" class="steps" v-if="step === 3">
+          <div class="step-indicator">Étape {{ step + 1  }} / 4</div>
           <p class="thanks-p">
             Merci d'avoir répondu à ce questionnaire. <br>Cliquez sur le bouton "Recevoir mon devis"
             pour que nous vous contactions prochainement.
           </p>
-          <div class="button-area">
-            <button class="btn-secondary" @click="previousStep">Précédent</button>
-            <button type="submit" class="btn-primary">Recevoir mon devis</button>
-          </div>
         </section>
+        <div class="button-area">
+            <button v-if="step > 0"  type="button" class="btn-secondary" @click="previousStep">Précédent</button>
+            <button v-if="step < 3"   type="button" class="btn-primary" @click="handleSubmit(nextStep)" >Suivant</button>
+            <button v-if="step === 3" type="submit" class="btn-primary">Recevoir le devis</button>
+        </div>
       </Form>
       <Button content="Revenir à l'accueil" link="/"></Button>
     </div>
@@ -150,155 +149,94 @@
   
   <script setup lang="ts">
   import { ref } from 'vue';
-  import { reactive } from 'vue';
   import { useToast } from 'vue-toastification';
   import {z} from 'zod';
   import Button from '~/components/Button.vue';
-  import { Field, ErrorMessage, Form } from 'vee-validate';
-  import { useForm } from 'vee-validate';
+  import { Field, ErrorMessage, Form, type GenericObject } from 'vee-validate';
   import { toTypedSchema } from '@vee-validate/zod';
 
 
 
   const toast = useToast();
-  const step = ref<number>(1);
+  const step = ref<number>(0);
   const url = "https://formspree.io/f/mjkgglky";
 
-  const validationSchemas: { [key: number]: z.ZodObject<any> } = {
-    1: z.object({
+  const validationSchemas  = [
+  toTypedSchema(z.object({
       name: z.string().min(1, "Le nom est requis"),
       firstName: z.string().min(1, "Le prénom est requis"),
       email: z.string().min(1, "Un email est requis").email("Email invalide"),
       isCompany: z.enum(["yes", "no"], { required_error: "Sélectionnez une option" }),
       companyName: z.string().optional(),
       companySize: z.string().optional(),
-    }),
+    })),
   
-    2: z.object({
-      isGetWebsite: z.enum(["yes", "no", "inProgress"]).optional(),
-      socialNetworks: z.object({
-        instagram: z.boolean(),
-        linkedin: z.boolean(),
-        twitter: z.boolean(),
-        tiktok: z.boolean(),
-        facebook: z.boolean(),
-        other_networks: z.boolean(),
+    toTypedSchema(z.object({
+        isGetWebsite: z.enum(["yes", "no", "inProgress"], { required_error: "Sélectionnez une option" }),
+        socialNetworks: z.object({
+        instagram: z.boolean().default(false),
+        linkedin: z.boolean().default(false),
+        twitter: z.boolean().default(false),
+        tiktok: z.boolean().default(false),
+        facebook: z.boolean().default(false),
+        other_networks: z.boolean().default(false),
       }).refine(socialNetworks => Object.values(socialNetworks).some(value => value), {
         message: "Sélectionnez au moins un réseau social",
       }),
-    }),
+    })),
   
-    3: z.object({
+    toTypedSchema(z.object({
       goals: z.object({
-        visibility: z.boolean(),
-        credibility: z.boolean(),
-        other: z.boolean(),
+        visibility: z.boolean().default(false),
+        credibility: z.boolean().default(false),
+        other: z.boolean().default(false),
       }).refine(goals => Object.values(goals).some(value => value), {
         message: "Sélectionnez au moins un objectif",
       }),
-    }),
-  };
+    })),
+  ];
 
 
-  const form = reactive({
-  name: "",
-  firstName: "",
-  email: "",
-  isCompany: "no",
-  companyName: "",
-  companySize: "",
-  goals:{
-    visibility: false,
-    credibility: false,
-    other: false,
-  },
-  isGetWebsite: "no",
-  socialNetworks: {
-    other_networks: false,
-    instagram: false,
-    linkedin: false,
-    twitter: false,
-    tiktok: false,
-    facebook: false,
-  }, 
+const currentSchema = computed(() => {
+  return validationSchemas[step.value];
 });
 
 
-
-  const { validate } = useForm({
-    validationSchema: validationSchemas,
-  });
-
-  const nextStep = async (e: Event) => {
-    e.preventDefault();
-   try {
-    const currentValidationSchema = validationSchemas[step.value];
-    const  { error }  = await currentValidationSchema.safeParseAsync(validationSchemas);
-
-    if (error) {
-      toast.error("Veuillez remplir tous les champs obligatoires.");
-      console.log(error)
+  const nextStep = async (values : GenericObject )=>{
+    if (step.value === 3) {
+      sendForm(values);
       return;
-    }else{
-
-      if (step.value < 4){
-      step.value++;
     }
-    }
-   } catch(error){
-      console.log("schema ", validationSchemas)
-    }
+  
+    if (Object.keys(values).length > 0) {
+    step.value++;
+  } else {
+    toast.error('Veuillez remplir tous les champs correctement.');
   }
+  } ;
+
   
   const previousStep = (e: Event) => {
     e.preventDefault();
-    if (step.value > 1) step.value--;
-  };
-  
-  const submitForm = async () => {
-    const data = {
-    name: form.name,
-    firstName: form.firstName,
-    email: form.email,
-    companyName: form.companyName,
-    companySize: form.companySize,
-    goals: form.goals,
-    isCompany: form.isCompany,
-    isGetWebsite: form.isGetWebsite,
-    socialNetworks: form.socialNetworks,
+    if (step.value > 0) step.value--;
   };
 
+  async function sendForm(values : GenericObject) {
     const response = await fetch(url, {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(values),
     });
 
-    if (response.ok) {
-        toast.success("Votre formulaire a bien été envoyé, nous vous contacterons prochainement.");
-        step.value = 1;
-        form.name = "";
-        form.firstName = "";
-        form.email = "";
-        form.companyName = "";
-        form.companySize = "";
-        form.goals = { visibility: false, credibility: false, other: false };
-        form.isGetWebsite = "";
-        form.socialNetworks = {
-        other_networks: false,
-        instagram: false,
-        linkedin: false,
-        twitter: false,
-        tiktok: false,
-        facebook: false,
-      };
-    } else {
-        toast.error("Une erreur est survenue lors de l'envoi du formulaire.");
+    if(response.ok){
+      toast.success("Votre formulaire a bien été envoyé, nous vous contacterons prochainement.");
+      step.value = 0;
     }
-   
-  };
+  }
+  
+  
   </script>
   
   <style scoped>
@@ -314,6 +252,15 @@
     background-image: url("/assets/background.png");
     background-size: cover;
     background-position: center;
+  }
+
+  .form{
+    background-color: #907dd3;
+    min-width: 250px;
+    animation: fadeIn 0.7s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 50px;
   }
 
   .header {
@@ -342,13 +289,8 @@
   }
   
   .steps {
-    background-color: #907dd3;
-    border-radius: 15px;
-    padding: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
     text-align: left;
-    animation: fadeIn 0.7s ease-in-out;
-    min-width: 250px;
   }
   
   .step-indicator {
@@ -436,7 +378,6 @@
   .button-area {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 25px;
   } 
   
   @keyframes fadeIn {
