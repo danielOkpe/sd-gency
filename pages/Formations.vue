@@ -47,7 +47,6 @@
       const recaptchaScript = document.createElement('script')
       recaptchaScript.setAttribute('src', 'https://assets.calendly.com/assets/external/widget.js')
       document.head.appendChild(recaptchaScript);
-      console.log("container :",containerRef.value)
       setTimeout(()=>{
         isLoading.value = false;
         container.classList.remove("hidden");
