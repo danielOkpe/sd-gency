@@ -24,7 +24,6 @@
           </p>
           <p>Réserve ta première visio gratuite pour définir tes besoins :</p>
           <div class="calendly-inline-widget" data-url="https://calendly.com/dnlokpe1/coiffure" ></div>
-
         </div>
   
         <!-- Call to action -->
