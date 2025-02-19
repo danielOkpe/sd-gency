@@ -1,112 +1,145 @@
 <template>
     <div class="container">
-    <section>
-        <h2>Nos services</h2>
-        <p>Cher clients et collaborateurs comme vous l’avez compris nos services sont base sur la creations de sites web et le devellopement web grace au copywriting. Nous vous presentons donc ci dessous nos services et nos solutions</p>
-    </section>
-
-    <section>
+      <section class="intro">
+        <h2>Nos Services</h2>
+        <p>
+          Chers clients et collaborateurs, nos services sont spécialisés dans la création et l'optimisation de sites web,
+          ainsi que dans le développement digital grâce au copywriting et au marketing de contenu.
+          Découvrez ci-dessous nos offres et solutions adaptées à vos besoins.
+        </p>
+      </section>
+  
+      <section class="service">
         <h3>Création et Optimisation de Sites Web</h3>
-        <div>
-        <article>
-            <h4>CREATION</h4> 
-            Sites vitrines adapte a chacune de vos demandes (le but est que votrew site vitrine vous ressemble comme si il avait ete creer par vous.)
-        </article>
-        <article>
-            <h4>OPTIMISATION</h4>
+        <div class="service-grid">
+          <article class="card">
+            <h4>Création</h4>
             <ul>
-                <li>Refonte et optimisation UX/UI pour améliorer l’expérience utilisateur</li>
-                <li>Maintenance et mises à jour régulières on ne vous abandonnera pas</li>
-                <li>Systèmes de paiement sécurisés intégrés</li>
+                <li>Sites vitrines sur mesure, conçus pour refléter votre identité et répondre parfaitement à vos attentes.</li>
             </ul>
-        </article>
+          </article>
+          <article class="card">
+            <h4>Optimisation</h4>
+            <ul>
+              <li>Refonte et optimisation UX/UI pour une meilleure expérience utilisateur.</li>
+              <li>Maintenance et mises à jour régulières : nous restons à vos côtés.</li>
+              <li>Intégration de systèmes de paiement sécurisés.</li>
+            </ul>
+          </article>
         </div>
-    </section>
-
-    <section>
+      </section>
+  
+      <section class="service">
         <h3>Stratégie de Contenu & SEO</h3>
-        <div>
-        <article>
-            <h4>COPYWRITING</h4>
+        <div class="service-grid">
+          <article class="card">
+            <h4>Copywriting</h4>
             <ul>
-                <li>Redaction de description de produits (optimise SEO)</li>
-                <li>Redaction d’articles optimises SEO</li>
-                <li>Redaction de script TikTok, youtube, publicite</li>
+              <li>Rédaction de descriptions produits optimisées pour le SEO.</li>
+              <li>Création d'articles de blog performants pour le référencement.</li>
+              <li>Élaboration de scripts pour TikTok, YouTube et publicités.</li>
             </ul>
-        </article>
-        <article>
-            <h4>SOCIAL MEDIA MANAGEMENT</h4>
+          </article>
+          <article class="card">
+            <h4>Social Media Management</h4>
             <ul>
-                <li>Gestion de contenue pour instagram tik tok </li>
-                <li>Planificatrtion et calendrier editoriale </li>
-                <li>Stratégie de branding et storytelling pour une identité forte sur les reseaux sociaux </li>
+              <li>Gestion de contenu pour Instagram et TikTok.</li>
+              <li>Planification et calendrier éditorial.</li>
+              <li>Développement de branding et storytelling pour une identité forte.</li>
             </ul>
-        </article>
+          </article>
         </div>
-    </section>
-
-    <section>
-        <h3>3. Intégration d’outils & Performance Digitale</h3>
-        <ul>
-            <li>Mise en place d’outils d’analyse (Google Analytic)</li>
-            <li>Optimisation de la vitesse des sites web</li>
-            <li>Systèmes de réservation et plateformes d’adhésion intégrés</li>
+      </section>
+  
+      <section class="service ">
+        <h3>Intégration d’Outils & Performance Digitale</h3>
+        <div class="service-grid">
+        <ul class="card">
+          <li>Implémentation d’outils d’analyse (Google Analytics).</li>
+          <li>Optimisation des performances et de la vitesse des sites web.</li>
+          <li>Intégration de systèmes de réservation et d’adhésion.</li>
         </ul>
-    </section>
-
-    <section class="button-section">
-        <Button link="form" content="Collaborons ensemble !" />   
-    </section>
-    </div> 
-</template>
-
-
-<script setup lang="ts">
-import Button from '~/components/Button.vue';
-
-</script>
-
-<style scoped>
-.container{
+         </div>
+      </section>
+  
+      <section class="button-section">
+        <Button link="form" content="Collaborons ensemble !" />
+      </section>
+    </div>
+  </template>
+  
+  <script setup lang="ts">
+  import Button from '~/components/Button.vue';
+  </script>
+  
+  <style scoped>
+  .container {
     min-height: calc(100vh - 80px);
     background-color: #b994f5;
-    padding: 10px;
-}
-
-section{
-    margin-bottom: 5.5vh;
-    display: flex;
-    flex-direction: column;
-    gap: 3.5vh;
-    align-items: center;
-}
-
-section div{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    padding: 40px 20px;
     text-align: center;
-}
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #4a4a4a;
+    margin-bottom: 25px;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    color: #673ab7;
+    margin-bottom: 8vh;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
 
-h4{
-    margin-bottom: 2vh;
-    font-size: 1.4rem;
-}
 
-h3{
-    font-size: 1.8rem;
-}
-
-h2{
-    font-size: 2.8rem;
-}
-
-p, li{
+  
+  p, li {
     font-size: 18px;
-    text-align: center;
-}
+    color: #555;
+    list-style:inside;
 
-.button-section{
-    margin-bottom: 0;
-}
-
-</style>
+  }
+  
+  .intro p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+  }
+  
+  .service {
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 12vh;
+  }
+  
+  .service-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    width: 280px;
+    text-align: left;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .button-section {
+    margin-top: 30px;
+  }
+  </style>
+  
