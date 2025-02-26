@@ -83,7 +83,7 @@ gap: 4vh;
 }
 
 h2{
-    font-size: 2em;
+    font-size: 3em;
     color: white;
 }
 

@@ -16,7 +16,7 @@
     >
             <img class="daniel-photo" >
             <h2>Daniel</h2>
-        <p> Paragraphe qui résume Daniel</p>
+        <p>Hey ! C'est moi Daniel, cette page est la pour vous présenter mon parcours et mes compétences. Profitez du voyage !</p>
     </section>
 
     <section 
