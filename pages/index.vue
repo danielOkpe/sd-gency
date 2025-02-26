@@ -17,6 +17,10 @@ SD Agency est une agence spécialisée dans le design web, le copywriting et le 
             <a href="https://linkedin.com">
                 <Icon image="linkedin"/>
             </a>
+
+            <a href="https://wwww.tiktok.com">
+                <Icon image="tiktok"/>
+            </a>
         </div>
         </div>
        
@@ -218,6 +222,10 @@ template{
     .white,
     .gradient-purple {
         width: 25%; 
+    }
+
+    .icons{
+        width: 70%;
     }
 }
 
