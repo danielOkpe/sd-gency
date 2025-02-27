@@ -6,7 +6,7 @@
             <h2>Samira</h2>
         </div>
         <div class="about">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium explicabo modi,sjdnhqsofnqoifjqoifjqoifsqoijf</p>
+            <p>Hello ! Moic'est Samira et je serais votre copyrwighter. Vous retrouverez ci-dessous mes compétences.</p>
         </div>
     </section>
 
