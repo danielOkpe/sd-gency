@@ -14,7 +14,7 @@
         :duration="1200"
         class="header"
     >
-            <img class="daniel-photo" >
+            <img src="../public/assets/daniel_avatar.png" class="daniel-photo" >
             <h2>Daniel</h2>
         <p>Hey ! C'est moi Daniel, cette page est la pour vous présenter mon parcours et mes compétences. Profitez du voyage !</p>
     </section>

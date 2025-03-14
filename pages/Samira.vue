@@ -2,7 +2,7 @@
     <div class="container">
     <section class="presentation">
         <div class="header">
-            <img class="samira-photo">
+            <img src="../public/assets/samira_avatar.png" class="samira-photo">
             <h2>Samira</h2>
         </div>
         <div class="about">

@@ -52,6 +52,28 @@
     </section>
 
     <section class="service">
+      <h3>Pour vos contenus</h3>
+      <div class="service-grid">
+        <article class="card">
+          <h4>Voix off</h4>
+          <ul>
+            <li>Narration pour documentaire et e-learning.</li>
+            <li>Podcasts.</li>
+            <li>Annonces et messages institutionnels.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h4>Ecriture de script</h4>
+          <ul>
+            <li>Court metrage.</li>
+            <li>Vidéo Youtube et publicités.</li>
+            <li>Podcasts et story telling narratif.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="service">
       <h3>Intégration d’Outils & Performance Digitale</h3>
       <div class="service-grid">
         <article class="card">
@@ -81,6 +103,7 @@ import Button from '~/components/Button.vue';
   background: linear-gradient(-90deg, #b994f5, #673ab7);
   padding: 60px 20px;
   text-align: center;
+  animation: fadeDown 1s ease-out;
 }
 
 h2 {
@@ -148,5 +171,17 @@ p, li {
 
 .button-section {
   margin-top: 30px;
+}
+
+@keyframes fadeDown {
+  from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  
 }
 </style>
