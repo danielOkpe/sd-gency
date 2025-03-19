@@ -1,7 +1,10 @@
 <template>
     <section class="header">
         <div class="about">
-            <Titre id="about-title"  content="SD Agency" />
+            <div class="head-logo">
+                <img src="/public/assets/logo.png">
+                <Titre id="about-title"  content="SD Agency" />
+            </div>
             <p class="sd-p"><strong>L’agence où vos idées prennent vie.</strong>
 SD Agency est une agence spécialisée dans le design web, le copywriting et le développement web.
 Êtes-vous prêt(e) à donner vie à vos idées ?</p>
@@ -72,6 +75,18 @@ template{
     padding-top: 30px;
     opacity: 0;
     animation: appear 2s 0.3s ease forwards;
+}
+
+.head-logo{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.head-logo img{
+    width: 100px;
+    height: 100px;
 }
 
 .our-mail{
