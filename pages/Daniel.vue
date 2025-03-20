@@ -14,7 +14,7 @@
         :duration="1200"
         class="header"
     >
-            <img src="../public/assets/daniel_avatar.png" class="daniel-photo" >
+            <img src="../public/assets/images/daniel_avatar.png" class="daniel-photo" >
             <h2>Daniel</h2>
         <p>Hey ! C'est moi Daniel, cette page est la pour vous présenter mon parcours et mes compétences. Profitez du voyage !</p>
     </section>
@@ -57,12 +57,12 @@
     >
         <h3>Compétences techniques</h3>
         <div class="hard-skills" ref="skillList">
-            <img alt="logo Java" src="/public/assets/java.svg">
-            <img alt="logo Python" src="/public/assets/python.svg">
-            <img alt="logo HTML" src="/public/assets/html-5-logo.svg" > 
-            <img alt="logo CSS" src="/public/assets/css3-logo.svg">
-            <img alt="logo JavaScript" src="/public/assets/Javascript_badge.svg">
-            <img alt="logo TypeScript" src="/public/assets/TypeScript_ESLint_logo.svg">
+            <img alt="logo Java" src="/public/assets/images/java.svg">
+            <img alt="logo Python" src="/public/assets/images/python.svg">
+            <img alt="logo HTML" src="/public/assets/images/html-5-logo.svg" > 
+            <img alt="logo CSS" src="/public/assets/images/css3-logo.svg">
+            <img alt="logo JavaScript" src="/public/assets/images/Javascript_badge.svg">
+            <img alt="logo TypeScript" src="/public/assets/images/TypeScript_ESLint_logo.svg">
         </div>
     </section>
 

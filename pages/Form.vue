@@ -249,7 +249,7 @@ const currentSchema = computed(() => {
     color: #fff;
     min-height: calc(100vh - 60px);
     
-    background-image: url("/assets/background.png");
+    background-image: url("/assets/images/background.png");
     background-size: cover;
     background-position: center;
   }

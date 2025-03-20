@@ -2,7 +2,7 @@
     <section class="header">
         <div class="about">
             <div class="head-logo">
-                <img src="/public/assets/logo.png">
+                <img src="/public/assets/images/logo.png">
                 <Titre id="about-title"  content="SD Agency" />
             </div>
             <p class="sd-p"><strong>L’agence où vos idées prennent vie.</strong>
@@ -15,14 +15,14 @@ SD Agency est une agence spécialisée dans le design web, le copywriting et le 
             </div>
             <div class="icons">
             <a href="https://www.instagram.com/the_sdagency/">
-                <Icon image="instagram" />
+                <Icon image="images/instagram" />
             </a>
             <a href="https://linkedin.com">
-                <Icon image="linkedin"/>
+                <Icon image="images/linkedin"/>
             </a>
 
             <a href="https://wwww.tiktok.com">
-                <Icon image="tiktok"/>
+                <Icon image="images/tiktok"/>
             </a>
         </div>
         </div>
@@ -64,7 +64,7 @@ template{
 .header{
     width: 100%;
     height: 50vh;
-    background-image: url("/assets/background.png");
+    background-image: url("/assets/images/background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,6 +87,7 @@ template{
 .head-logo img{
     width: 100px;
     height: 100px;
+    border-radius: 9999px;
 }
 
 .our-mail{
@@ -193,6 +194,7 @@ template{
 
 #about-title{
     font-size: 40px;
+    /*font-family: 'Cormorant Garamond',serif;*/
 }
 
 .form-btn-div{

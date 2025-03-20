@@ -54,4 +54,6 @@ body{
 
 <script setup lang="ts">
 import Nav from './components/Nav.vue';
+import "./public/assets/css/main.css";
+
 </script>
